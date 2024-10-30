@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* 去掉默认边距 */
+    height: 100vh; /* 使 body 高度为视口高度 */
+    background-color: black; /* 设置背景颜色为黑色 */
+    position: relative; /* 为绝对定位提供参考 */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列，等宽 */
+    grid-gap: 70px; /* 卡片之间的间隙 */
+    width: 30px auto; /* 可根据需要调整 */
+    margin: 20px auto; /* 居中网格 */
+    background-color: black; /* 九宫格背景为黑色 */
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white; /* 边框颜色为白色 */
+    background-color: transparent; /* 卡片背景为透明 */
+    width: 100px;   /* 设置更大的宽度 */
+    height: 120px;  /* 设置更大的高度 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+
+/* 小屏幕的媒体查询 */
+@media (max-width: 600px) {
+    .grid-container {
+        width: 90%; /* 使网格宽度适应屏幕 */
+    }
+    .grid-item {
+        width:70%;
+        height:70%;
+        font-size: 1.5em; /* 减小字体 */
+    }
+}
+
+@media (max-width: 350px) {
+    .grid-container {
+        width: 50%; /* 更小屏幕的网格宽度 */
+    }
+    .grid-item {
+        width: 50%;
+        height:50%;
+        font-size: 1.2em; /* 进一步减小字体 */
+    }
+}
+
+button {
+    position: absolute; /* 绝对定位 */
+    bottom: 20px; /* 距离底部20px */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: white; /* 按钮背景为白色 */
+    color: black; /* 按钮字体颜色为黑色 */
+    border: none; /* 去掉按钮边框 */
+    cursor: pointer; /* 鼠标指针变为手型 */
+}
+
+.card-img {
+    width: 100%;  /* 设置宽度为 100% */
+    height: 100%; /* 设置高度为 100% */
+    object-fit: fill; 
+}
